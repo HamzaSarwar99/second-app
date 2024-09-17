@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   cardLabel: {
     color: '#000000',
     marginHorizontal: 4,
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 4,
   },
@@ -84,6 +84,8 @@ const styles = StyleSheet.create({
   cardFooter: {
     color: '#000000',
     marginHorizontal: 4,
-    marginTop: 10,
+    marginTop: 6,
+    fontSize: 16,
+    fontWeight:'500'
   },
 });

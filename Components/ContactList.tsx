@@ -13,7 +13,7 @@ export default function ContactList() {
     {
       uid: 2,
       name: 'Muhammad Hassan',
-      status: 'Developer at Echt Technologies and my Teacher',
+      status: 'Senior Developer at Echt Technologies',
       phone: '03424712554',
       imageUrl: 'https://avatars.githubusercontent.com/u/113697066?v=4',
     },
@@ -34,14 +34,18 @@ export default function ContactList() {
   ];
   return (
     <View>
-      <Text style={[styles.headingText,styles.underLineText]}>Contact List</Text>
+      <Text style={[styles.headingText, styles.underLineText]}>
+        Contact List
+      </Text>
       <ScrollView style={styles.container} scrollEnabled={false}>
         {contacts.map(({uid, name, status, phone, imageUrl}) => (
           <View key={uid} style={styles.userCard}>
             <Image source={{uri: imageUrl}} style={styles.userImage} />
-            <Text style={styles.userName}>{name}</Text>
-            <Text style={styles.userStatus}>{status}</Text>
-            <Text style={styles.userPhone}>{phone}</Text>
+            <View>
+              <Text style={styles.userName}>{name}</Text>
+              <Text style={styles.userStatus}>{status}</Text>
+              <Text style={styles.userPhone}>{phone}</Text>
+            </View>
           </View>
         ))}
       </ScrollView>
@@ -54,27 +58,51 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     paddingTop: 10,
-    margin:6
-    },
-    underLineText: {
-        fontSize: 20,
-        textDecorationLine:'underline'
-    },
+    margin: 6,
+  },
+  underLineText: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+  },
   container: {
     // backgroundColor: '#498c8c',
     padding: 6,
     marginTop: 10,
   },
   userCard: {
-    marginHorizontal: 4,
+    backgroundColor: '#DAE0E2',
+    // marginHorizontal: 4,
     marginVertical: 4,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
   },
   userImage: {
     width: 60,
     height: 60,
     borderRadius: 60 / 2,
+    marginRight: 6,
+    marginBottom: 6,
+    marginTop: 6,
+    marginHorizontal:4
   },
-  userName: {},
-  userStatus: {},
-  userPhone: {},
+  userName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginHorizontal: 8,
+    color: '#000',
+    // marginVertical:4
+  },
+  userStatus: {
+    fontSize: 16,
+    color: '#666',
+    marginHorizontal: 8,
+  },
+  userPhone: {
+    fontSize: 16,
+    color: '#666',
+    marginHorizontal: 8,
+  },
 });
